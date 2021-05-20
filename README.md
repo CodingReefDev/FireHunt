@@ -24,7 +24,9 @@ git clone https://github.com/CodingReef/FireHunt.git
 
 Or you can just add the following code snippet in the head tag of your HTML file.
 
-<div style="padding: 10px; border-radius:10px; color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: &quot;Consolas, Courier New, monospace&quot;, Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;"><span style="color: #808080;">&lt;</span><span style="color: #569cd6;">script</span>&nbsp;<span style="color: #9cdcfe;">src</span>=<span style="color: #ce9178;">"LINK TO THE LIBRARY"</span>&nbsp;<span style="color: #808080;">&gt;&lt;/</span><span style="color: #569cd6;">script</span><span style="color: #808080;">&gt;</span></div>
+```js
+<script src="LINK TO THE LIBRARY" ></script>
+```
 
 # Function To Query
 
@@ -33,20 +35,29 @@ First, make a file in your file directories called `FireHunt.json` and paste you
 Then, make an instance of the library's class to search your firebase.
 
 FOR FIRESTORE
-
-<div style="padding: 10px; border-radius: 10px; color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: &quot;Consolas, Courier New, monospace&quot;, Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;"><span style="color: #569cd6;">var</span>&nbsp;<span style="color: #9cdcfe;">firehuntFS</span>&nbsp;=&nbsp;<span style="color: #c586c0;">await</span>&nbsp;<span style="color: #569cd6;">new</span>&nbsp;<span style="color: #dcdcaa;">FireHunt_FireStore</span>();</div>
+```js
+var firehuntFS = await new FireHunt_FireStore();
+```
 FOR REAL-TIME DATABASE
 
-<div style="padding: 10px; border-radius: 10px; color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: &quot;Consolas, Courier New, monospace&quot;, Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;"><span style="color: #569cd6;">var</span>&nbsp;<span style="color: #9cdcfe;">firehuntRT</span>&nbsp;=&nbsp;<span style="color: #c586c0;">await</span>&nbsp;<span style="color: #569cd6;">new</span>&nbsp;<span style="color: #dcdcaa;">FireHunt_RealTimeDB</span>();</div>
+```js
+var firehuntRT = await new FireHunt_RealTimeDB();
+```
 Here, we are using `await` so, make sure to use an `async` function. 
 
 Then, you can use the following `Functions`.
 
 ## The following are supported by the FireStore class
 
-- <div style="padding: 10px; border-radius:10px; color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: &quot;Consolas, Courier New, monospace&quot;, Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;"><span style="color: #c586c0;">await</span>&nbsp;<span style="color: #9cdcfe;">firehuntFS</span>.<span style="color: #dcdcaa;">init</span>();</div>
-- <div style="padding:10px; border-radius:10px; color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: &quot;Consolas, Courier New, monospace&quot;, Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;"><span style="color: #c586c0;">await</span>&nbsp;<span style="color: #9cdcfe;">firehuntFS</span>.<span style="color: #dcdcaa;">searchKey</span>({&nbsp;<span style="color: #9cdcfe;">collection</span><span style="color: #9cdcfe;">:</span>&nbsp;<span style="color: #ce9178;">""</span>,&nbsp;<span style="color: #9cdcfe;">key</span><span style="color: #9cdcfe;">:</span>&nbsp;<span style="color: #ce9178;">""</span>}).<span style="color: #dcdcaa;">then</span>(&nbsp;<span style="color: #9cdcfe;">searchResults</span>&nbsp;<span style="color: #569cd6;">=&gt;</span>&nbsp;{<span style="color: #9cdcfe;">console</span>.<span style="color: #dcdcaa;">log</span>(<span style="color: #9cdcfe;">searchResults</span>&nbsp;)});</div>
-- <div style="padding: 10px; border-radius: 10px; color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: &quot;Consolas, Courier New, monospace&quot;, Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;"><span style="color: #c586c0;">await</span>&nbsp;<span style="color: #9cdcfe;">firehuntFS</span>.<span style="color: #dcdcaa;">searchValue</span>({&nbsp;<span style="color: #9cdcfe;">collection</span><span style="color: #9cdcfe;">:</span>&nbsp;<span style="color: #ce9178;">""</span>,&nbsp;<span style="color: #9cdcfe;">value</span><span style="color: #9cdcfe;">:</span>&nbsp;<span style="color: #ce9178;">""</span>}).<span style="color: #dcdcaa;">then</span>(<span style="color: #9cdcfe;">searchResults</span>&nbsp;<span style="color: #569cd6;">=&gt;</span>{<span style="color: #9cdcfe;">console</span>.<span style="color: #dcdcaa;">log</span>(<span style="color: #9cdcfe;">searchResults</span>&nbsp;)});</div>
+```js
+await firehuntFS.init();
+```
+```js
+await firehuntFS.searchKey({ collection: "", key: ""}).then( searchResults => {console.log(searchResults )});
+```
+```js
+await firehuntFS.searchValue({ collection: "", value: ""}).then(searchResults =>{console.log(searchResults )});
+```
 
 NOTE: All the `calls` use `await`  so make sure to use an `async` function. We use `await` because the fetching of data from firebase takes time.
 
@@ -90,11 +101,15 @@ Please Note:
 
 ## The following are supported by the `Realtime Database class`
 
-* <div style="padding: 10px; border-radius:10px; color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: &quot;Consolas, Courier New, monospace&quot;, Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;"><span style="color: #c586c0;">await</span>&nbsp;<span style="color: #9cdcfe;">firehuntRT</span>.<span style="color: #dcdcaa;">init</span>();</div>
-
-* <div style="padding:10px; border-radius: 10px; color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: &quot;Consolas, Courier New, monospace&quot;, Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;"><span style="color: #c586c0;">await</span>&nbsp;<span style="color: #9cdcfe;">firehuntRT</span>.<span style="color: #dcdcaa;">searchKey</span>({&nbsp;<span style="color: #9cdcfe;">path:</span>&nbsp;<span style="color: #ce9178;">""</span>,&nbsp;<span style="color: #9cdcfe;">key:</span>&nbsp;<span style="color: #ce9178;">""</span>&nbsp;}).<span style="color: #dcdcaa;">then</span>(<span style="color: #9cdcfe;">searchResults</span>&nbsp;<span style="color: #569cd6;">=&gt;</span>&nbsp;{&nbsp;<span style="color: #9cdcfe;">console</span>.<span style="color: #dcdcaa;">log</span>(<span style="color: #9cdcfe;">searchResults</span>)&nbsp;});</div>
-
-* <div style="padding:10px; border-radius: 10px; color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: &quot;Consolas, Courier New, monospace&quot;, Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;"><span style="color: #c586c0;">await</span>&nbsp;<span style="color: #9cdcfe;">firehuntRT</span>.<span style="color: #dcdcaa;">searchValue</span>({&nbsp;<span style="color: #9cdcfe;">path:</span>&nbsp;<span style="color: #ce9178;">""</span>,&nbsp;<span style="color: #9cdcfe;">key:</span>&nbsp;<span style="color: #ce9178;">""</span>&nbsp;}).<span style="color: #dcdcaa;">then</span>(<span style="color: #9cdcfe;">searchResults</span>&nbsp;<span style="color: #569cd6;">=&gt;</span>&nbsp;{&nbsp;<span style="color: #9cdcfe;">console</span>.<span style="color: #dcdcaa;">log</span>(<span style="color: #9cdcfe;">searchResults</span>)&nbsp;});</div>
+```js
+await firehuntRT.init();
+```
+```js
+await firehuntRT.searchKey({ path: "", key: "" }).then(searchResults => { console.log(searchResults) });
+```
+```js
+await firehuntRT.searchValue({ path: "", key: "" }).then(searchResults => { console.log(searchResults) });
+```
 
 NOTE: All the `calls` use `await`  so make sure to use an `async` function. We use `await` because the fetching of data from firebase takes time.
 
