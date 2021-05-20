@@ -10,7 +10,7 @@ With FireHunt you can search your firebase without any difficulty. We currently 
 
 # Try Before Use
 
-You can try our example online. [Link To The Example](https://github.com).
+You can try our example online. [Link To The Example](https://firehunt.codingreef.com/search-your-firebase-demo).
 
 # How To Install
 
