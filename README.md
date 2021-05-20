@@ -25,7 +25,7 @@ git clone https://github.com/CodingReef/FireHunt.git
 Or you can just add the following code snippet in the head tag of your HTML file.
 
 ```js
-<script src="LINK TO THE LIBRARY" ></script>
+<script src="https://codingreefdev.github.io/FireHunt/Src/FireHunt.js" ></script>
 ```
 
 # Function To Query
