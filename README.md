@@ -1,8 +1,8 @@
-<img src="./Src/Assets/logo.png" width="100px" />
+<img src="./Src/Assets/FireHuntGif.gif" width="100%" />
 
 
 
-# Welcome to Fire Hunt
+# Welcome to Fire Hunt <img src="./Assets/logo.png" width="30px" />
 
 FireHunt is an open-source project to full-text search your firebase.
 
